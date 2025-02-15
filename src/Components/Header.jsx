@@ -4,7 +4,7 @@ import logo from '/Users/ramnaveengupthakandikatla/disney_clone/src/assets/image
 const Header = () => {
   return (
     <div >
-      <img src={logo} alt="Logo of Disney_clone" className='w-[80px] md:w-[115px] object-cover'/>
+      <img src={logo} alt="Logo of Disney_clone" className='w-[80px] md:w-[110px] object-cover'/>
     </div>
   )
 }
