@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import GlobalAPI from '../Services/GlobalAPI'
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
@@ -10,11 +11,17 @@ const Slider = () => {
     },[])
     const getTrendingMovies=()=>{
         GlobalAPI.getTrendingVedios.then(resp=>{
-            console.log('Response Data:',resp.data.results);
+           // console.log('Response Data:',resp.data.results);
             setMovieList(resp.data.results)
         })
     }
   return (
+    <div>
+        < BsChevronCompactLeft className='text-white text-[30px] 
+        absolute mx-8 mt-[150px] cursor-pointer'/>
+        <BsChevronCompactRight className='text-white text-[30px] 
+        absolute mx-8 mt-[150px] cursor-pointer right-0' />
+
     <div className='flex overflow-x-auto w-full px-16 py-4 scrollbar-hide'>
   {moiveList.map((item) => (
     <img
@@ -24,6 +31,7 @@ const Slider = () => {
       alt={item.title || 'Movie'}  
     />
   ))}
+</div>
 </div>
   )
 }
