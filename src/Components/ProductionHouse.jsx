@@ -41,27 +41,27 @@ const ProductionHouse = () => {
   ];
 
   return (
-    <div className='flex gap-5 p-2 px-5 md:px-16'>
+    <div className="flex gap-5 p-2 px-5 md:px-16">
       {productionHouseList.map((item) => (
         <div
           key={item.id}
-          className='relative border-[2px] border-gray-600 rounded-lg'>
+          className="relative border-[2px] border-gray-600 rounded-lg">
+          
+          {/* Video: Reduced opacity and increased opacity on hover */}
           <video
             src={item.video}
             autoPlay
             loop
             playsInline
             muted
-            className='absolute top-0 rounded-md z-0 w-full h-full object-cover 
-            opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100'
+            className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50 transition-opacity duration-500 ease-in-out hover:opacity-30"
           />
+          
+          {/* Image: Always visible with opacity change on hover */}
           <img
             src={item.image}
             alt={`Image for ${item.id}`}
-            className='w-full z-[1] transition-opacity duration-500 ease-in-out hover:opacity-50' />
-
-          
-          
+            className="w-full z-10 transition-opacity duration-500 ease-in-out opacity-100 hover:opacity-90" />
         </div>
       ))}
     </div>
